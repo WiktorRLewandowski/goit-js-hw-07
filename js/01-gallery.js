@@ -2,6 +2,7 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 const galleryEl = document.querySelector(".gallery");
 
+// creating clunky markup
 const galleryItem = [];
 galleryItems.forEach((item) => {
   let li = document.createElement("li");
@@ -21,8 +22,10 @@ galleryItems.forEach((item) => {
   anchor.append(img);
   galleryItem.push(li);
 });
+// adding new elements to DOM
 galleryEl.append(...galleryItem);
 
+// creating on-click event
 galleryEl.addEventListener("click", (event) => {
   event.preventDefault();
 
@@ -36,9 +39,7 @@ galleryEl.addEventListener("click", (event) => {
 
 galleryEl.addEventListener("keydown", (event) => {
   event.preventDefault();
-  let lightbox = document.querySelector("div.lightBox");
   if (event.key === "Escape") {
-    lightbox.outerHTML = "";
   }
   console.log(event.key);
 });
